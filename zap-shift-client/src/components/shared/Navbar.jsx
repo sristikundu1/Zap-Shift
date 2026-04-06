@@ -71,7 +71,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="max-w-10/12 mx-auto  my-3 ">
+    <div className="max-w-11/12 mx-auto  my-3 ">
       <div className="navbar bg-white shadow-sm rounded-lg px-6">
         {/* Left */}
         <div className="navbar-start">
@@ -115,11 +115,12 @@ const Navbar = () => {
             Sign In
           </button>
 
-          <button className="btn bg-primary text-base-200 rounded-lg font-semibold">
-            Sign Up
-          </button>
-
-          <GoArrowUpRight className="bg-base-200 rounded-full p-2 text-4xl text-white" />
+          <div className="flex">
+            <button className="btn bg-primary text-base-200 rounded-lg font-semibold">
+              Sign Up
+            </button>
+            <GoArrowUpRight className="bg-base-200 rounded-full p-2 text-4xl text-white" />
+          </div>
         </div>
       </div>
     </div>
