@@ -1,0 +1,27 @@
+/* google font  */
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+/* Plugin config (ONLY flat declarations) */
+@plugin "daisyui";
+
+/* Theme defined OUTSIDE plugin */
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true;
+
+  --color-primary: #caeb66;
+  --color-secondary: #03373d;
+  --color-accent: #33929d;
+  --color-neutral: #03373d;
+
+  --color-base-100: #eaeced;
+  --color-base-200: #1f1f1f;
+  --color-base-content: #03373d;
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
