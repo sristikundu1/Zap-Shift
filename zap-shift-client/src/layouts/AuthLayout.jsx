@@ -7,7 +7,7 @@ const AuthLayout = () => {
     <div className="flex justify-between items-start">
       <div className="flex flex-col flex-1">
         <Link to={"/"}>
-          <div className="py-11 px-10">
+          <div className="py-8 px-10">
             <NavLogo></NavLogo>
           </div>
         </Link>

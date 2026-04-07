@@ -2,8 +2,10 @@ import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import NavLogo from "./NavLogo";
 import { NavLink } from "react-router";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOutUser } = useAuth();
   const Links = (
     <>
       <NavLink
@@ -82,6 +84,16 @@ const Navbar = () => {
     </>
   );
 
+  // logout function
+  const handleLogOut = () => {
+    logOutUser()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="max-w-11/12 mx-auto  my-3 ">
       <div className="navbar bg-white shadow-sm rounded-lg px-6">
@@ -123,16 +135,36 @@ const Navbar = () => {
 
         {/* Right */}
         <div className="navbar-end flex items-center gap-3">
-          <button className="btn bg-white border rounded-lg border-base-200">
-            Sign In
-          </button>
+          {user ? (
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleLogOut}
+                className="btn bg-white border rounded-lg border-base-200"
+              >
+                Sign Out
+              </button>
 
-          <div className="flex">
-            <button className="btn bg-primary text-base-200 rounded-lg font-semibold">
-              Sign Up
-            </button>
-            <GoArrowUpRight className="bg-base-200 rounded-full p-2 text-4xl text-white" />
-          </div>
+              <div className="flex">
+                <button className="btn bg-primary text-base-200 rounded-lg font-semibold">
+                  Be a rider
+                </button>
+                <GoArrowUpRight className="bg-base-200 rounded-full p-2 text-4xl text-white" />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <button className="btn bg-white border rounded-lg border-base-200">
+                Sign In
+              </button>
+
+              <div className="flex">
+                <button className="btn bg-primary text-base-200 rounded-lg font-semibold">
+                  Be a rider
+                </button>
+                <GoArrowUpRight className="bg-base-200 rounded-full p-2 text-4xl text-white" />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
