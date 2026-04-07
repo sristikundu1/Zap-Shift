@@ -6,6 +6,7 @@ import SalesLogo from "./componenets/SalesLogo";
 import UniqueServices from "./componenets/UniqueServices";
 import BecomeMarchant from "./componenets/BecomeMarchant";
 import Reviews from "./componenets/Reviews";
+import FAQ from "./componenets/FAQ";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <UniqueServices></UniqueServices>
       <BecomeMarchant></BecomeMarchant>
       <Reviews></Reviews>
+      <FAQ></FAQ>
     </div>
   );
 };

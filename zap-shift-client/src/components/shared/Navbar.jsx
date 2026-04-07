@@ -10,7 +10,9 @@ const Navbar = () => {
         to="/services"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
@@ -21,7 +23,9 @@ const Navbar = () => {
         to="/coverage"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
@@ -31,7 +35,9 @@ const Navbar = () => {
         to="/about"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
@@ -41,7 +47,9 @@ const Navbar = () => {
         to="/pricing"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
@@ -51,7 +59,9 @@ const Navbar = () => {
         to="/blog"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
@@ -61,7 +71,9 @@ const Navbar = () => {
         to="/contact"
         className={({ isActive }) =>
           `px-3 py-2 ${
-            isActive ? "bg-primary text-white rounded-lg" : "text-base-200"
+            isActive
+              ? "bg-primary text-secondary font-bold rounded-4xl"
+              : "text-base-200"
           }`
         }
       >
