@@ -20,6 +20,8 @@
   --color-base-200: #1f1f1f;
   --color-base-content: #03373d;
   --color-white: #ffffff;
+
+  --color-success: #caeb66;
 }
 
 body {

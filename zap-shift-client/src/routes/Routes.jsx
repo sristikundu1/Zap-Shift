@@ -7,6 +7,9 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Auth/Login/Login";
 import Registration from "../pages/Auth/Registration/Registration";
+import Rider from "../pages/Rider/Rider";
+import PrivateRoute from "./PrivateRoute";
+import SendParcel from "../pages/SendParcel/SendParcel";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,24 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "rider",
+        element: (
+          <PrivateRoute>
+            <Rider></Rider>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/warehouses.json"),
+      },
+      {
+        path: "send-parcel",
+        element: (
+          <PrivateRoute>
+            <SendParcel></SendParcel>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/warehouses.json"),
       },
     ],
   },

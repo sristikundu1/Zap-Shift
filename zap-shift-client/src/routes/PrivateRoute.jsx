@@ -1,8 +1,10 @@
 import React from "react";
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import useAuth from "../hooks/useAuth";
 
 const PrivateRoute = ({ children }) => {
+  const location = useLocation();
+
   const { user, loading } = useAuth();
   if (loading) {
     return <span className="loading loading-spinner text-success"></span>;

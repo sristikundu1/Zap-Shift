@@ -1,11 +1,12 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { loginUser, signInWithGoogle } = useAuth();
 
   let from = location.state?.from?.pathname || "/";
@@ -33,6 +34,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -66,7 +68,7 @@ const Login = () => {
           placeholder="password"
           {...register("password", {
             required: true,
-            maxLength: 6,
+            minLength: 6,
             pattern:
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
           })}
@@ -97,7 +99,7 @@ const Login = () => {
 
       <p>
         Don’t have any account?
-        <Link to={"/register"}>
+        <Link state={location?.state} to={"/register"}>
           <span className="text-primary">Register</span>
         </Link>
       </p>
